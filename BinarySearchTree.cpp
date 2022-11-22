@@ -68,6 +68,25 @@ void BinarySearchTree::print(int depth=0) const
 //Task 1
 bool BinarySearchTree::isSame(const BinarySearchTree* other)
 {
+    // base case 1.. ? 
+    if (other == nullptr) {
+        return true;
+    }
+
+    if (!this->hasValue(other->value)) {
+        return false;
+    } 
+
+    // check left recursively,
+    return this->leftSubTree->isSame(other->leftSubTree);
+
+
+    // check right recursively
+    return this->leftSubTree->isSame(other->rightSubTree);
+
+    
+
+
 
 }
 
