@@ -106,5 +106,22 @@ void BinarySearchTree::buildNewBST(BinarySearchTree* newBST, int newValue)
 //Task 2
 void BinarySearchTree::traverseAdd(BinarySearchTree* newBST)
 {
+    // determine node from old tree to add to new tree
+    if (newBST == nullptr || this == nullptr) {
+        return;
+    }
+
+    this->leftSubTree->traverseAdd(newBST);
+    newBST->add(this->value);
+    this->rightSubTree->traverseAdd(newBST);
+
+
+
+
+
+    // determine where to add the node to the new tree.
+
+   
+    
 
 }

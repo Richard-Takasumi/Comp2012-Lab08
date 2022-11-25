@@ -95,4 +95,36 @@ int main(int argc, char const *argv[])
         
         return 0;
     }
+    else if (testcase == 3)     //Test Task 1&2
+    {
+        BinarySearchTree *tree1 = new BinarySearchTree(1);
+        int nodes[6] = {1, 5, 3, 6, 7, 8};
+        for (int i = 0; i < 6; i++)
+            tree1->add(nodes[i]);
+
+        std::cout << "The existing BST:" << std::endl;
+        tree1->print(0);
+
+        BinarySearchTree *tree2 = new BinarySearchTree(0);
+        tree1->buildNewBST(tree2, 3);
+        std::cout << "Different tree of the first tree with the new root -2:" << std::endl;
+        tree2->print(0);
+
+        BinarySearchTree *tree3 = new BinarySearchTree(0);
+        tree1->buildNewBST(tree3, 5);
+        std::cout << "Different tree of the first tree with the new root 3:" << std::endl;
+        tree3->print(0);
+
+        BinarySearchTree *tree4 = new BinarySearchTree(0);
+        tree3->buildNewBST(tree4, 6);
+        std::cout << "Different tree of the first tree with the new root 4:" << std::endl;
+        tree4->print(0);
+
+        delete tree1;
+        delete tree2;
+        delete tree3;
+        delete tree4;
+        
+        return 0;
+    }
 }
